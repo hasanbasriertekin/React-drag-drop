@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import type { Quote as QuoteType } from '../types'
-import { nanoid } from 'nanoid'
-import { Button, Modal, Form } from 'react-bootstrap'
-import './App.css'
+import type { Quote as QuoteType } from '../types';
+import { nanoid } from 'nanoid';
+import { Button, Modal, Form } from 'react-bootstrap';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 
 const initial = Array.from({ length: 10 }, (v, k) => k).map(k => {
   const custom: QuoteType = {
