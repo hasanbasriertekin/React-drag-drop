@@ -16,7 +16,7 @@ const initial = Array.from({ length: 10 }, (v, k) => k).map(k => {
 });
 
 const grid = 8;
-const reorder = (list, startIndex, endIndex): QuoteType[] => {
+const reorder = (list: string, startIndex :number, endIndex:number): QuoteType[] => {
   const result: QuoteType[] = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
