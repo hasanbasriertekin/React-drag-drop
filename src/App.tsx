@@ -25,11 +25,12 @@ const reorder = (list, startIndex, endIndex): QuoteType[] => {
 };
 
 const QuoteItem = styled.div`
-  width: 280px;
+  width: 75%;
   height: 40px;
-  border: 1px solid grey;
+  border: 1px solid black;
+  border-radius: 10px;
   margin-bottom: ${grid}px;
-  background-color: lightblue;
+  background-color:#ffc107;
   padding: ${grid}px;
 `;
 
@@ -63,7 +64,7 @@ function Quote({ quote, index, onEditClick }: { quote: QuoteType, index: number,
             <QuoteItem>
               {quote.content}
             </QuoteItem>
-            <Button variant="outline-light fw-bold" className="edit-button" onClick={handleClick}>
+            <Button variant="warning fw-bold" className="edit-button" onClick={handleClick}>
               Düzenle
             </Button>
           </QuoteItemContainer>
@@ -152,7 +153,7 @@ function App() {
           <h1>𝐃𝐑𝐎𝐏-𝐃𝐑𝐀𝐆</h1>
         <InputGroup className="mb-3" style={{ width: '700px' }}>
             <Form.Control
-              placeholder="Listeye Ürün Ekle"
+              placeholder="Araç Parçasını ekle-sırala"
               aria-label="Listeye Ürün Ekle"
               aria-describedby="basic-addon2"
               value={newQuoteContent}
@@ -177,7 +178,7 @@ function App() {
               }}
             />
             <Button
-              variant="success"
+              variant="warning"
               size="lg"
               onClick={() => {
                 if (newQuoteContent.trim() === "") {
