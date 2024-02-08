@@ -37,7 +37,7 @@ const CenteredContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Sayfa yüksekliğinin tamamını kaplamak için */
+  height: 100vh; 
 `;
 
 const QuoteItemContainer = styled.div`
@@ -80,14 +80,14 @@ const QuoteList = React.memo(function QuoteList({ quotes, onEditClick }: { quote
 });
 
 function App() {
-  const [newQuoteContent, setNewQuoteContent] = useState(""); // State for new quote content
+  const [newQuoteContent, setNewQuoteContent] = useState(""); 
   const [state, setState] = useState({ quotes: initial });
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [editDialogTodoId, setEditDialogTodoId] = useState<string | null>(null);
   const [editedQuoteContent, setEditedQuoteContent] = useState("");
 
   useEffect(() => {
-    // Sayfa açıldığında boş bir liste ile başla
+    
     setState({ quotes: [] });
   }, []);
 
@@ -124,7 +124,7 @@ function App() {
 
   const handleEditSave = () => {
     if (editedQuoteContent.trim() === "") {
-      // Düzenlenmiş içerik boş olamaz
+     
       return;
     }
 
@@ -141,7 +141,7 @@ function App() {
   const handleDelete = () => {
     const updatedQuotes = state.quotes.filter((quote) => quote.id !== editDialogTodoId);
     setState({ quotes: updatedQuotes });
-    handleEditClose(); // Düzenleme modalini kapat
+    handleEditClose(); 
   };
 
 
@@ -160,7 +160,7 @@ function App() {
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   if (newQuoteContent.trim() === "") {
-                    return; // Boş alıntı eklenemez
+                    return; 
                   }
 
                   const newQuote: QuoteType = {
@@ -172,7 +172,7 @@ function App() {
                     quotes: [...prevState.quotes, newQuote]
                   }));
 
-                  setNewQuoteContent(""); // Input'u temizle
+                  setNewQuoteContent("");
                 }
               }}
             />
@@ -181,7 +181,7 @@ function App() {
               size="lg"
               onClick={() => {
                 if (newQuoteContent.trim() === "") {
-                  return; // Boş alıntı eklenemez
+                  return; 
                 }
 
                 const newQuote: QuoteType = {
@@ -193,7 +193,7 @@ function App() {
                   quotes: [...prevState.quotes, newQuote]
                 }));
 
-                setNewQuoteContent(""); // Input'u temizle
+                setNewQuoteContent(""); 
               }}
               id="button-addon2"
             >
