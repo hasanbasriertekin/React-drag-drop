@@ -1,3 +1,5 @@
+
+
 .app-container{
   text-align: center;
 
@@ -12,4 +14,8 @@
 .edit-button{
   height: 40px;
   margin-left: 5px;
+}
+
+#button-addon2{
+  width: 10rem;
 }

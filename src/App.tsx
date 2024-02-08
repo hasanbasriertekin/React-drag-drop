@@ -149,6 +149,7 @@ function App() {
     <>
       <CenteredContainer>
         <div className="app-container" >
+          <h1>𝐃𝐑𝐎𝐏-𝐃𝐑𝐀𝐆</h1>
         <InputGroup className="mb-3" style={{ width: '700px' }}>
             <Form.Control
               placeholder="Listeye Ürün Ekle"
