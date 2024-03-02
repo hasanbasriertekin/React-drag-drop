@@ -5,8 +5,8 @@ import type { Quote as QuoteType } from '../types'
 import { nanoid } from 'nanoid'
 import { Button, Modal, Form, InputGroup } from 'react-bootstrap'
 import './App.css'
-
-const initial = Array.from({ length: 10 }, (v, k) => k).map(k => {
+//@ts-ignore
+const initial = Array.from({ length: 10 }, (v, k) => k).map( k => {
   const custom: QuoteType = {
     id: `id-${k}`,
     content: `Quote ${k}`
@@ -16,7 +16,7 @@ const initial = Array.from({ length: 10 }, (v, k) => k).map(k => {
 });
 
 const grid = 8;
-const reorder = (list, startIndex, endIndex): QuoteType[] => {
+const reorder = (list: Iterable<QuoteType> | ArrayLike<QuoteType>, startIndex: number, endIndex: number): QuoteType[] => {
   const result: QuoteType[] = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
